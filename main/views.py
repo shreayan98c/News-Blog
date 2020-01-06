@@ -96,10 +96,9 @@ def login_request(request):
 def single_slug(request, single_slug):
 	articles = [a for a in Article.objects.all()]
 	article_titles = [a.title for a in Article.objects.all()]
-	if single_slug in zip(article_titles, articles):
+	if single_slug in article_titles:
 		return render(request=request,
 					  template_name="main/article.html",
 					  context={"single_slug":articles})
 
-		# return HttpResponse(f"{single_slug} is an article!")
-	# return HttpResponse(f"{single_slug} does not correspond to anything.")
+	return HttpResponse(f"{single_slug} does not correspond to anything.")
