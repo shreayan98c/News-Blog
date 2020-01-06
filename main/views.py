@@ -102,4 +102,4 @@ def single_slug(request, single_slug):
 					  context={"single_slug":articles})
 
 		# return HttpResponse(f"{single_slug} is an article!")
-	return HttpResponse(f"{single_slug} does not correspond to anything.")
+	# return HttpResponse(f"{single_slug} does not correspond to anything.")
