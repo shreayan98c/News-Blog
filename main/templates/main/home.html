@@ -1,0 +1,37 @@
+{% extends "main/base.html" %}
+
+<style type="text/css">
+	body 
+	{
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+	}
+
+	main 
+	{
+		flex: 1 0 auto;
+	}
+</style>
+
+{% block contents %}
+
+<div class="row">
+	{% for art in articles %}
+	<div class="col s12 m6">
+		<a href="{{ art.url }}">
+			<div class="card blue-grey darken-1 hoverable">
+				<div class="card-content white-text">
+					<span class="card-title">{{ art.title|safe }}</span>
+					<hr>
+					<p>Author: {{ art.author|safe }}</p>
+					<p style="font-size: 70%">Published {{ art.publishedAt|safe }}</p>
+					<p>Description <br> {{ art.description|safe }}</p>
+				</div>
+			</div>
+		</a>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}

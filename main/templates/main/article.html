@@ -1,0 +1,17 @@
+{% extends "main/base.html" %}
+
+{% block contents %}
+
+<div class="container">
+	{{single_slug.source}}
+	{{single_slug.author}}
+	{{single_slug.title}}
+	{{single_slug.description}}
+	{{single_slug.url}}
+	{{single_slug.urlToImg}}
+	{{single_slug.publishedAt}}
+	{{single_slug.content}}
+</div>
+
+
+{% endblock %}
